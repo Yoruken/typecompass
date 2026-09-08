@@ -4,6 +4,7 @@ import TypeCompassCore
 
 struct ContentView: View {
     @ObservedObject var store: InputSourceStore
+    @ObservedObject var monitor: LiveInputMonitor
     @State private var sample = ""
     private let detector = LanguageDetector()
     private var detection: Detection { detector.detect(sample) }
@@ -24,6 +25,8 @@ struct ContentView: View {
                     Text(L10n.text("PROTOTYPE")).font(.caption.bold())
                         .padding(8).background(.teal.opacity(0.12), in: Capsule())
                 }
+
+                LiveAssistanceView(monitor: monitor)
 
                 GroupBox {
                     VStack(alignment: .leading, spacing: 14) {
@@ -92,7 +95,7 @@ struct ContentView: View {
                     }.padding(10)
                 }
 
-                Label(L10n.text("Local only. No global keyboard monitoring. Automatic switching is planned."), systemImage: "lock.shield")
+                Label(L10n.text("Local only. Observation is opt-in. Retyping requires your confirmation."), systemImage: "lock.shield")
                     .font(.caption).foregroundStyle(.secondary)
             }.padding(28)
         }

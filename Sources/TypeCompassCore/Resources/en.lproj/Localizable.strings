@@ -34,3 +34,29 @@
 "Too little context. Keep the current input source." = "Too little context. Keep the current input source.";
 "Ambiguous or outside the starter vocabulary. Keep the current input source." = "Ambiguous or outside the starter vocabulary. Keep the current input source.";
 "Matched the starter vocabulary. This is a hint, not a certainty." = "Matched the starter vocabulary. This is a hint, not a certainty.";
+
+/* Opt-in live assistance and guarded retyping. */
+"Live input assistance" = "Live input assistance";
+"Live assistance is off." = "Live assistance is off.";
+"Type in another app. A language hint appears without taking focus. Press Control + Option + Return to clear this segment, switch and retype." = "Type in another app. A language hint appears without taking focus. Press Control + Option + Return to clear this segment, switch and retype.";
+"Allow Accessibility" = "Allow Accessibility";
+"Allow Input Monitoring" = "Allow Input Monitoring";
+"Allowed" = "Allowed";
+"Not allowed" = "Not allowed";
+"Experimental: QWERTY letters only. Field compatibility varies. Start a fresh segment after enabling. No typed content is saved or uploaded." = "Experimental: QWERTY letters only. Field compatibility varies. Start a fresh segment after enabling. No typed content is saved or uploaded.";
+"Original input for manual recovery" = "Original input for manual recovery";
+"Clear recovery text" = "Clear recovery text";
+"Local only. Observation is opt-in. Retyping requires your confirmation." = "Local only. Observation is opt-in. Retyping requires your confirmation.";
+"Pause live assistance" = "Pause live assistance";
+"Enable live assistance" = "Enable live assistance";
+"Allow Accessibility and Input Monitoring, then enable live assistance again." = "Allow Accessibility and Input Monitoring, then enable live assistance again.";
+"Choose three distinct input sources before enabling live assistance." = "Choose three distinct input sources before enabling live assistance.";
+"macOS could not start observation. Check permissions and relaunch the app." = "macOS could not start observation. Check permissions and relaunch the app.";
+"Listening for a new input segment. Confirm suggestions with ⌃⌥↩." = "Listening for a new input segment. Confirm suggestions with ⌃⌥↩.";
+"Observation was interrupted by macOS. Enable it again to start a fresh segment." = "Observation was interrupted by macOS. Enable it again to start a fresh segment.";
+"Did you mean %@?" = "Did you mean %@?";
+"⌃⌥↩ Confirm: clear this composition, switch and retype." = "⌃⌥↩ Confirm: clear this composition, switch and retype.";
+"This field does not expose a verifiable composition range. Retyping is unavailable." = "This field does not expose a verifiable composition range. Retyping is unavailable.";
+"Clearing only the current input segment…" = "Clearing only the current input segment…";
+"Switched to %@ and retyped the input. Confirm any remaining candidates normally." = "Switched to %@ and retyped the input. Confirm any remaining candidates normally.";
+"Retyping stopped after %d of %d keys. Original input is available below; check the target field before recovering." = "Retyping stopped after %d of %d keys. Original input is available below; check the target field before recovering.";

@@ -27,6 +27,25 @@ final class InputSourceStore: ObservableObject {
         sources.first(where: { $0.id == currentID })?.name ?? L10n.text("Unavailable")
     }
 
+    func language(for id: String) -> InputLanguage? {
+        let matches = InputLanguage.allCases.filter { mappedID(for: $0) == id && !id.isEmpty }
+        return matches.count == 1 ? matches.first : nil
+    }
+
+    var hasDistinctMappings: Bool {
+        let ids = InputLanguage.allCases.map { mappedID(for: $0) }
+        return !ids.contains("") && Set(ids).count == 3
+    }
+
+    @discardableResult
+    func activate(id: String) -> Bool {
+        refresh()
+        guard let source = sources.first(where: { $0.id == id }),
+              TISSelectInputSource(source.reference) == noErr else { return false }
+        refresh()
+        return currentID == id
+    }
+
     func mappedID(for language: InputLanguage) -> String {
         let id = mappings[language.rawValue] ?? ""
         return sources.contains(where: { $0.id == id }) ? id : ""

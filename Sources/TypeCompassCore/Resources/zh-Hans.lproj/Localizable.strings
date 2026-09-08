@@ -34,3 +34,29 @@
 "Too little context. Keep the current input source." = "输入内容太短，暂时保持当前输入法。";
 "Ambiguous or outside the starter vocabulary. Keep the current input source." = "暂时无法判断，或内容不在基础词表中。保持当前输入法。";
 "Matched the starter vocabulary. This is a hint, not a certainty." = "已匹配基础词表。结果仅供参考，仍可能存在歧义。";
+
+/* Opt-in live assistance and guarded retyping. */
+"Live input assistance" = "实时输入辅助";
+"Live assistance is off." = "实时辅助已关闭。";
+"Type in another app. A language hint appears without taking focus. Press Control + Option + Return to clear this segment, switch and retype." = "在其他应用中输入，识别到可能用错语言时会弹出提示，不抢走输入焦点。按 Control + Option + Return，清除本轮输入、切换语言并重新输入。";
+"Allow Accessibility" = "允许辅助功能";
+"Allow Input Monitoring" = "允许输入监控";
+"Allowed" = "已允许";
+"Not allowed" = "未允许";
+"Experimental: QWERTY letters only. Field compatibility varies. Start a fresh segment after enabling. No typed content is saved or uploaded." = "实验功能：支持 QWERTY 字母输入，输入框兼容性因应用而异。开启后请从新一轮输入开始，不保存或上传输入内容。";
+"Original input for manual recovery" = "原始输入（用于手动恢复）";
+"Clear recovery text" = "清除恢复内容";
+"Local only. Observation is opt-in. Retyping requires your confirmation." = "本地运行，监听需主动开启，重放需快捷键确认。";
+"Pause live assistance" = "暂停实时辅助";
+"Enable live assistance" = "开启实时辅助";
+"Allow Accessibility and Input Monitoring, then enable live assistance again." = "请先允许“辅助功能”和“输入监控”，再开启实时辅助。";
+"Choose three distinct input sources before enabling live assistance." = "请先为三种语言分别选择不同的输入法，再开启实时辅助。";
+"macOS could not start observation. Check permissions and relaunch the app." = "macOS 无法启动监听，请检查权限并重新打开应用。";
+"Listening for a new input segment. Confirm suggestions with ⌃⌥↩." = "等待新一轮输入。出现建议后，按 ⌃⌥↩ 确认。";
+"Observation was interrupted by macOS. Enable it again to start a fresh segment." = "macOS 已中断监听，请重新开启，并从新一轮输入开始。";
+"Did you mean %@?" = "你是否想输入%@？";
+"⌃⌥↩ Confirm: clear this composition, switch and retype." = "⌃⌥↩ 确认：清除本轮组词，切换语言并重新输入。";
+"This field does not expose a verifiable composition range. Retyping is unavailable." = "此输入框未提供可核对的组词范围，暂不支持安全清除和重放。";
+"Clearing only the current input segment…" = "正在清除本轮输入，保留之前的文字…";
+"Switched to %@ and retyped the input. Confirm any remaining candidates normally." = "已切换到%@并重新输入。如有候选词，请继续正常选词。";
+"Retyping stopped after %d of %d keys. Original input is available below; check the target field before recovering." = "重放已停止，已发送 %d / %d 个按键。原始输入保留在下方，请检查目标输入框后再手动恢复。";
