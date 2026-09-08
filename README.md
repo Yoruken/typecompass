@@ -9,6 +9,7 @@ TypeCompass is a companion utility, not a new input method. Keep the input metho
 ## Current features
 
 - SwiftUI window and menu bar controls.
+- English and Simplified Chinese UI, following the macOS preferred app language.
 - List enabled keyboard input sources and map one to each language.
 - Switch mapped sources manually and inspect the result.
 - Local detection lab with Pinyin, Romaji, and English examples.
@@ -33,6 +34,14 @@ Enable your preferred input sources in **System Settings → Keyboard → Text I
 
 Finish any active candidate selection before manually switching. Switching does not rewrite text already entered, and macOS per-document input-source settings can affect the source selected when focus changes.
 
+## 界面语言 / Interface language
+
+支持简体中文和英文，默认跟随 macOS 的语言偏好。也可以在 macOS 的“语言与地区”设置中，为 TypeCompass 单独选择简体中文，重新打开应用后生效。中文支持覆盖主窗口、菜单栏、输入法切换状态、错误提示和语言识别说明；输入法名称由 macOS 提供。
+
+The interface follows your macOS preferred app language, with English as the fallback. You can choose Simplified Chinese specifically for TypeCompass in macOS Language & Region settings, then relaunch. This changes interface text only; input-source mappings and detection behavior are unchanged.
+
+Translations live in `Sources/TypeCompassCore/Resources/{en,zh-Hans}.lproj/Localizable.strings`. Keep keys and format placeholders consistent across both files. The app build script includes the localization bundle so the packaged app works outside the source checkout.
+
 ## Detection lab
 
 Use an English input source to enter raw Latin letters in the lab, or choose an example button. `nihao` and `ni hao` suggest Chinese, `ohayou` suggests Japanese, and `hello` suggests English. Ambiguous input such as `shi` remains undecided.
@@ -46,7 +55,7 @@ This is an explainable starter lexicon, **not a trained model, a complete Pinyin
 - [ ] Composition-aware suggestions that preserve candidate selection and respect manual switching.
 - [ ] Conservative automatic switching, cooldowns, and a correction shortcut.
 - [ ] Compatibility verification with Apple Pinyin, Apple Japanese, Google Japanese Input, and third-party Pinyin input methods.
-- [ ] Signed, notarized releases and localization.
+- [ ] Signed, notarized releases and additional localizations.
 
 ## Architecture
 

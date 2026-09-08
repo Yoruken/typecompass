@@ -23,7 +23,7 @@ private struct SourceMenu: View {
     @Environment(\.openWindow) private var openWindow
 
     var body: some View {
-        Text("Current: \(store.currentName)")
+        Text(L10n.format("Current: %@", store.currentName))
         Divider()
         ForEach(InputLanguage.allCases) { language in
             Button(language.title) { store.select(language) }
@@ -31,13 +31,13 @@ private struct SourceMenu: View {
         }
         Divider()
         Text(store.status)
-        Button("Refresh input sources") { store.refresh() }
-        Button("Open TypeCompass…") {
+        Button(L10n.text("Refresh input sources")) { store.refresh() }
+        Button(L10n.text("Open TypeCompass…")) {
             openWindow(id: "main")
             NSApp.activate(ignoringOtherApps: true)
         }
         Divider()
-        Button("Quit TypeCompass") { NSApp.terminate(nil) }
+        Button(L10n.text("Quit TypeCompass")) { NSApp.terminate(nil) }
             .keyboardShortcut("q")
     }
 }

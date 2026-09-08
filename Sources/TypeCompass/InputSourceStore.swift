@@ -13,7 +13,7 @@ struct InputSource: Identifiable {
 final class InputSourceStore: ObservableObject {
     @Published private(set) var sources: [InputSource] = []
     @Published private(set) var currentID = ""
-    @Published private(set) var status = "Select the input sources you already use."
+    @Published private(set) var status = L10n.text("Select the input sources you already use.")
     @Published private var mappings: [String: String]
     private let defaults: UserDefaults
 
@@ -24,7 +24,7 @@ final class InputSourceStore: ObservableObject {
     }
 
     var currentName: String {
-        sources.first(where: { $0.id == currentID })?.name ?? "Unavailable"
+        sources.first(where: { $0.id == currentID })?.name ?? L10n.text("Unavailable")
     }
 
     func mappedID(for language: InputLanguage) -> String {
@@ -46,7 +46,7 @@ final class InputSourceStore: ObservableObject {
         guard let list = TISCreateInputSourceList(filter as CFDictionary, false)?.takeRetainedValue() as? [TISInputSource] else {
             sources = []
             currentID = ""
-            status = "Could not read enabled input sources. Try Refresh."
+            status = L10n.text("Could not read enabled input sources. Try Refresh.")
             return
         }
         sources = list.compactMap { source in
@@ -64,17 +64,17 @@ final class InputSourceStore: ObservableObject {
     func select(_ language: InputLanguage) {
         refresh()
         guard let source = sources.first(where: { $0.id == mappedID(for: language) }) else {
-            status = "Choose an enabled input source for \(language.title) first."
+            status = L10n.format("Choose an enabled input source for %@ first.", language.title)
             return
         }
         let result = TISSelectInputSource(source.reference)
         refresh()
         if result != noErr {
-            status = "macOS could not select \(source.name) (error \(result))."
+            status = L10n.format("macOS could not select %@ (error %d).", source.name, result)
         } else if currentID == source.id {
-            status = "Selected \(source.name). Existing text is unchanged."
+            status = L10n.format("Selected %@. Existing text is unchanged.", source.name)
         } else {
-            status = "macOS accepted the request, but the current source has not changed. Try Refresh."
+            status = L10n.text("macOS accepted the request, but the current source has not changed. Try Refresh.")
         }
     }
 
